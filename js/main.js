@@ -1,3 +1,4 @@
+// NOTE: Fix an issue where the button event listener stops working after the first search.
 window.addEventListener('load', () => {
     // Grab the API key
     let api_key = 'P008Twl6jsjXcFQn9lQSzLrTQRkkYTgT';
@@ -10,6 +11,8 @@ window.addEventListener('load', () => {
         for(let x = 0; x < data.data.length; x++) {
             document.body.innerHTML += `<img src='${data.data[x].images.original.url}' />`;
         }
+        giphyResult = '';
+        data = '';
     };
 
 
