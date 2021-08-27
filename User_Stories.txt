@@ -1,0 +1,8 @@
+User Stories
+
+1) As a user, I should be able to limit the number of gif images that show up on the page.
+
+2) As a user, I should be able to search for stickers or gif images through the GIPHY API.
+
+3) As a user, I should be able to view important information about a gif image or sticker such
+as author, date posted, etc.
