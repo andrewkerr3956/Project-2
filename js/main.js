@@ -4,16 +4,34 @@ window.addEventListener('load', () => {
     let api_key = 'P008Twl6jsjXcFQn9lQSzLrTQRkkYTgT';
 
     // Get the search button by ID and then add a click event listener to it
-    let fetchGiphy = async(search_query, resultType) => {
+    let fetchGiphy = async (search_query, resultType) => {
         let giphyResult = await fetch(`http://api.giphy.com/v1/${resultType}/search?api_key=${api_key}&q=${search_query}`)
         let data = await giphyResult.json();
         console.log(data);
-        for(let x = 0; x < data.data.length; x++) {
-            document.body.innerHTML += `<img src='${data.data[x].images.original.url}' />`;
+        loopGiphyResults(data);
+    };
+
+    let loopGiphyResults = async (data) => {
+        const output = document.getElementById('flexbox');
+        /* Clearing the inner HTML of flexbox div is important because otherwise
+        when user searches for more gifs or stickers, then it would stack on top of the
+        previous searches if the inner HTML is not cleared*/ 
+        output.innerHTML = '';
+        /* Through the use of Bootstrap cards, we can display some information about
+        the gifs/stickers rather than just displaying them. */
+        for (let x = 0; x < data.data.length; x++) {
+            output.innerHTML += `<div id='item${x}' class='flex-item card'>
+            <div class='card-body'>
+                <img class='img-fluid' src='${data.data[x].images.original.url}' />
+            </div>
+            <div class='card-footer'>
+                More information
+            </div>`;
         }
+        // Clear out the results of the fetch as well as the data received from it
         giphyResult = '';
         data = '';
-    };
+    }
 
 
     const searchButton = document.getElementById('search-button');
@@ -22,7 +40,7 @@ window.addEventListener('load', () => {
         let resultType = 'gifs';
         fetchGiphy(search_query, resultType);
     });
-    
+
 
 
 });

@@ -45,9 +45,24 @@ nav li a:hover {
     text-decoration: none;
 }
 
+.flex-container {
+    display: flex;
+    margin-top: 10px;
+    flex-flow: wrap row;
+}
+
+.flex-item {
+    align-content: center;
+    flex-shrink: 2;
+    flex-grow: 5;
+    margin: 10px;
+    max-height: 10%;
+    max-width: 10%;
+}
+
 footer {
     background: rgba(0, 0, 0, 0.657);
-    padding: 5px;
-    margin-top: 37%;
+    padding: 8px;
+    margin-top: 378px;
     margin-bottom: 0;
 }
