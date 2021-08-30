@@ -25,8 +25,10 @@ window.addEventListener('load', () => {
                 <img class='img-fluid' src='${data.data[x].images.original.url}' />
             </div>
             <div class='card-footer'>
-                More information
-            </div>`;
+                <h4>${data.data[x].title}</h4> 
+                <p>Posted by ${data.data[x].username}</p>
+                </div>`
+           ;
         }
         // Clear out the results of the fetch as well as the data received from it
         giphyResult = '';

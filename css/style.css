@@ -56,8 +56,12 @@ nav li a:hover {
     flex-shrink: 2;
     flex-grow: 5;
     margin: 10px;
-    max-height: 10%;
-    max-width: 10%;
+    max-height: 30%;
+    max-width: 30%;
+}
+
+.card-footer {
+    color: black;
 }
 
 footer {
