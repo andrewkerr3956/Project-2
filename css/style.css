@@ -1,5 +1,4 @@
 body {
-    color: white;
     margin: 0;
     text-align: center;
 }
@@ -20,6 +19,7 @@ header {
 
 nav {
     text-align: center;
+    color: white;
 }
 
 nav strong {
@@ -45,6 +45,10 @@ nav li a:hover {
     text-decoration: none;
 }
 
+input, button {
+    margin: 20px auto 0px auto;
+}
+
 .flex-container {
     display: flex;
     margin-top: 10px;
@@ -67,6 +71,8 @@ nav li a:hover {
 footer {
     background: rgba(0, 0, 0, 0.657);
     padding: 8px;
-    margin-top: 378px;
-    margin-bottom: 0;
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    color: white;
 }
