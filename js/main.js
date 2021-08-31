@@ -44,7 +44,7 @@ window.addEventListener('load', () => {
     const searchButton = document.getElementById('search-button');
     searchButton.addEventListener('click', () => {
         let search_query = document.getElementById('search-query').value;
-        let resultType = 'gifs';
+        let resultType = document.querySelector(`input[name='type']:checked`).id;
         document.getElementById('footer').style.position = 'absolute';
         fetchGiphy(search_query, resultType);
     });
