@@ -1,6 +1,7 @@
 body {
     margin: 0;
     text-align: center;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .float-left {
@@ -79,4 +80,10 @@ footer {
     position: fixed;
     bottom: 0;
     color: white;
+}
+
+@media screen and (max-width: 576px) {
+    .flex-item {
+        max-width: 80%;
+    }
 }
