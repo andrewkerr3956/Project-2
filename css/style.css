@@ -15,23 +15,25 @@ body {
 header {
     background: rgba(0, 0, 0, 0.657);
     padding: 30px;
-    max-height: 25%;
+    max-height: 20%;
 }
 
 nav {
-    text-align: center;
     color: white;
-    margin: auto;
 }
 
 nav strong {
     font-size: x-large;
 }
 
+nav ul {
+    display: inline-flex;
+}
+
 nav li {
     font-size: small;
     list-style-type: none;
-    margin-right: 20px;
+    margin-left: 20px;
 }
 
 nav li a {
@@ -61,15 +63,13 @@ nav li a:hover {
 .nav-container {
     display: flex;
     text-align: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-flow: nowrap row;
 }
 
 .nav-item {
-    align-content: center;
     display: inline-flex;
-    width: 40%;
-    flex-basis: 100%;
+    align-content: center;
     padding: 0;
 }
 

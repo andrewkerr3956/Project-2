@@ -6,20 +6,19 @@ $(document).ready( () => {
     let fetchGiphy = async(search_query, resultType, limit) => {
         // Set variables to be in the same format required for the GET request
         let q = search_query;
-        let l = limit;
         // AJAX method performing the request to the GIPHY API
         $.ajax ({
             url: await `http://api.giphy.com/v1/${resultType}/search`,
             type: 'get',
             dataType: 'json',
-            data: {api_key, q, l},
+            data: {api_key, q, limit},
             success: (data) => {
                 // If there is at least 1 result, call the loop method. Else, display 'No results found'
                 if(data.data.length > 0) {
                     loopGiphyResults(data);
                 }
                 else {
-                    $('#flexbox').html('No results found.');
+                    $('#flexbox').html('<h2>No results found.</h2>');
                 }
             },
             error: (err) => {
