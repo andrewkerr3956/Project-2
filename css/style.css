@@ -55,8 +55,17 @@ input, button {
 }
 
 .flex-container {
+    width: 100%;
     display: flex;
     margin-top: 10px;
+    flex-flow: wrap row;
+}
+
+.form-container {
+    align-content: center;
+    display: flex;
+    width: 100%;
+    margin: auto;
     flex-flow: wrap row;
 }
 
@@ -67,6 +76,13 @@ input, button {
     margin: 10px;
     max-height: 30%;
     max-width: 30%;
+}
+
+.form-item {
+    align-content: center;
+    width: 20%;
+    flex-basis: 80%;
+    margin: 5px;
 }
 
 .card-footer {

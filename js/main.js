@@ -1,16 +1,17 @@
-// NOTE: Fix an issue where the button event listener stops working after the first search.
 window.addEventListener('load', () => {
     // Grab the API key
     let api_key = 'P008Twl6jsjXcFQn9lQSzLrTQRkkYTgT';
 
     // Get the search button by ID and then add a click event listener to it
-    let fetchGiphy = async (search_query, resultType) => {
-        let giphyResult = await fetch(`http://api.giphy.com/v1/${resultType}/search?api_key=${api_key}&q=${search_query}`)
+    let fetchGiphy = async (search_query, resultType, limit) => {
+        let giphyResult = await fetch(`http://api.giphy.com/v1/${resultType}/search?api_key=${api_key}&q=${search_query}&limit=${limit}`);
+        // Wait for the fetch to happen, then wait for it to be parsed into JSON.
         let data = await giphyResult.json();
-        console.log(data);
+        // At least one result was found.
         if (data.data.length > 0) {
             loopGiphyResults(data);
         }
+        // No results were found.
         else {
             document.getElementById('flexbox').innerHTML = '<h1>No results found.</h1>';
         }
@@ -37,18 +38,64 @@ window.addEventListener('load', () => {
         // Clear out the results of the fetch as well as the data received from it
         giphyResult = '';
         data = '';
+        /* This footer positioning is relative to make it below the results returned from
+        the results of the GIPHY API */
         document.getElementById('footer').style.position = 'relative';
     }
 
 
     const searchButton = document.getElementById('search-button');
     searchButton.addEventListener('click', () => {
+        // Grab the search string, result type, and the results limit from input
         let search_query = document.getElementById('search-query').value;
         let resultType = document.querySelector(`input[name='type']:checked`).id;
+        let limit = document.getElementById('search-limit').value;
+        // This footer styling is to make the position absolute in case of no results.
         document.getElementById('footer').style.position = 'absolute';
-        fetchGiphy(search_query, resultType);
+        fetchGiphy(search_query, resultType, limit);
     });
 
 
 
 });
+
+
+/*
+$(document).ready( () => {
+    let api_key = 'P008Twl6jsjXcFQn9lQSzLrTQRkkYTgT';
+
+    let fetchGiphy = async(search_query, resultType) => {
+        let giphyResult = $.ajax ({
+            url: await fetch(`http://api.giphy.com/v1/${resultType}/search?api_key=${api_key}&q=${search_query}`),
+            type: 'get',
+            dataType: 'json',
+            success: (data) => {
+                return data.json();
+            }
+        });
+        loopGiphyResults(giphyResult);
+    };
+
+    let loopGiphyResults = (data) => {
+        const output = $('#flexbox-container');
+        output.innerHTML = '';
+        for(let x = 0; x < data.data.length; x++) {
+            output.innerHTML +=  `<div class='flex-item card'>
+            <div class='card-body'>
+            <img src=${data.data[x].images.original.url} />
+            </div>
+            <div class='card-footer'>
+            <h4>${data.data[x].title}</h4>
+            <p>${data.data[x].username}</p>
+            `
+        }
+            
+    };
+
+    $('#search-button').on('click', () => {
+        let search_query = $('#search-query').val();
+        let resultType = $(`input[name='type']:checked`).val();
+        fetchGiphy(search_query, resultType);
+    });
+});
+*/
