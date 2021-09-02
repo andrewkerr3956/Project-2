@@ -44,10 +44,6 @@ nav li a:hover {
     text-decoration: none;
 }
 
-input, button {
-    margin-top: 20px;
-}
-
 .flex-container {
     width: 100%;
     display: flex;
@@ -57,18 +53,20 @@ input, button {
 
 .form-container {
     display: flex;
-    width: 100%;
+    text-align: center;
     justify-content: center;
     flex-flow: wrap row;
 }
 
 .nav-container {
     display: flex;
-    align-content: space-between;
+    text-align: center;
+    justify-content: center;
     flex-flow: nowrap row;
 }
 
 .nav-item {
+    align-content: center;
     display: inline-flex;
     width: 40%;
     flex-basis: 100%;
@@ -96,6 +94,7 @@ input, button {
 
 footer {
     background: rgba(0, 0, 0, 0.657);
+    text-align: center;
     padding: 8px;
     width: 100%;
     position: fixed;
