@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <header class='container-fluid'>
-        <nav>
-            <strong class='float-left'>GIPHY API</strong>
-            <ul class='float-right'>
+    <header>
+        <nav class='nav-container container-fluid'>
+            <strong class='nav-item'>GIPHY API</strong>
+            <ul class='nav-item'>
                 <li><a href='#'>Home</a></li>
                 <li><a href='#'>Search</a></li>
                 <li><a href='http://giphy.com/' target='blank'>GIPHY</a></li>
@@ -26,27 +26,25 @@
         </nav>
     </header>
     <main>
-        <div class='container'>
-            <div class='form-container'>
-                <div class='form-item'>
-                    <input type='text' id='search-query' placeholder='Search anything' />
-                    <button id='search-button' class='form-group'>Search</button>
-                </div>
-                <div class='form-item'>
-                    <label for='type'>Results Type</label>
-                    <input type='radio' id='gifs' name='type' value='gifs' checked>GIF</input>
-                    <input type='radio' id='stickers' name='type' value='stickers'>Sticker</input> <br />
-                </div>
-                <div class='form-item'>
-                    <label for='search-limit'>Results Limit (Max 50)</label>
-                    <input type='number' id='search-limit' placeholder='50' min='0' max='50' />
-                </div>
-
-
+        <div class='form-container'>
+            <div class='form-item'>
+                <input type='text' id='search-query' placeholder='Search anything' />
+                <button id='search-button' class='form-group'>Search</button>
             </div>
-            <div id='flexbox' class='flex-container'>
-
+            <div class='form-item'>
+                <label for='type'>Results Type</label>
+                <input type='radio' id='gifs' name='type' value='gifs' checked>GIF</input>
+                <input type='radio' id='stickers' name='type' value='stickers'>Sticker</input> <br />
             </div>
+            <div class='form-item'>
+                <label for='search-limit'>Results Limit (Max 50)</label>
+                <input type='number' id='search-limit' placeholder='50' min='0' max='50' />
+            </div>
+
+
+        </div>
+        <div id='flexbox' class='flex-container'>
+
         </div>
         <!-- jQuery -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>

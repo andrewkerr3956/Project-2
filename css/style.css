@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    text-align: center;
+    padding: 0;
     font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -21,19 +21,17 @@ header {
 nav {
     text-align: center;
     color: white;
+    margin: auto;
 }
 
 nav strong {
-    font-size: large;
-    margin-top: 0;
-    margin-bottom: auto;
+    font-size: x-large;
 }
 
 nav li {
     font-size: small;
+    list-style-type: none;
     margin-right: 20px;
-    display: inline;
-    padding: 3px;
 }
 
 nav li a {
@@ -47,26 +45,34 @@ nav li a:hover {
 }
 
 input, button {
-    margin: 20px auto 0px auto;
-}
-
-.container {
-    text-align: center;
+    margin-top: 20px;
 }
 
 .flex-container {
     width: 100%;
     display: flex;
-    margin-top: 10px;
+    justify-content: center;
     flex-flow: wrap row;
 }
 
 .form-container {
-    align-content: center;
     display: flex;
     width: 100%;
-    margin: auto;
+    justify-content: center;
     flex-flow: wrap row;
+}
+
+.nav-container {
+    display: flex;
+    align-content: space-between;
+    flex-flow: nowrap row;
+}
+
+.nav-item {
+    display: inline-flex;
+    width: 40%;
+    flex-basis: 100%;
+    padding: 0;
 }
 
 .flex-item {
@@ -80,7 +86,6 @@ input, button {
 
 .form-item {
     align-content: center;
-    width: 20%;
     flex-basis: 80%;
     margin: 5px;
 }
@@ -101,5 +106,19 @@ footer {
 @media screen and (max-width: 576px) {
     .flex-item {
         max-width: 80%;
+    }
+
+    .nav-container {
+        align-content: center;
+        flex-flow: wrap row;
+    }
+
+    .nav-item {
+        align-self: center!important;
+        width: 30%;
+    }
+
+    nav ul {
+        display: block!important;
     }
 }
