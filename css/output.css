@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+header {
+  background: rgba(0, 0, 0, 0.657);
+  padding: 30px;
+  max-height: 20%;
+}
+
+nav {
+  color: white;
+}
+nav strong {
+  font-size: x-large;
+}
+nav ul {
+  display: inline-flex;
+}
+nav li {
+  font-size: small;
+  list-style-type: none;
+  margin-left: 20px;
+}
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+nav li a:hover {
+  color: white;
+  text-decoration: none;
+}
+
+.nav-container {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-flow: nowrap row;
+}
+.nav-container .nav-item {
+  display: inline-flex;
+  align-content: center;
+  padding: 0;
+}
+
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+}
+.flex-container .flex-item {
+  align-content: center;
+  flex-shrink: 2;
+  flex-grow: 5;
+  margin: 10px;
+  max-height: 30%;
+  max-width: 30%;
+}
+.flex-container .flex-item .card-footer {
+  color: black;
+}
+
+.form-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: wrap row;
+}
+.form-container .form-item {
+  align-content: center;
+  flex-basis: 80%;
+  margin: 5px;
+}
+
+footer {
+  background: rgba(0, 0, 0, 0.657);
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  color: white;
+}
+
+@media screen and (max-width: 576px) {
+  .flex-item {
+    max-width: 80%;
+  }
+
+  nav ul {
+    display: block !important;
+  }
+
+  .nav-container {
+    align-content: center;
+    flex-flow: wrap row;
+  }
+  .nav-container .nav-item {
+    align-self: center;
+    width: 30%;
+  }
+}
+
+/*# sourceMappingURL=output.css.map */
