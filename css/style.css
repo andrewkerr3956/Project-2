@@ -1,123 +1,125 @@
 body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Josefin Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: "Josefin Sans", sans-serif;
+  background: rgba(0, 0, 0, 0.657);
+  color: white;
 }
 
 .float-left {
-    float: left;
+  float: left;
 }
 
 .float-right {
-    float: right;
+  float: right;
 }
 
 header {
-    background: rgba(0, 0, 0, 0.657);
-    padding: 30px;
-    max-height: 20%;
-}
-
-nav {
-    color: white;
+  background: rgba(0, 0, 0, 0.657);
+  padding: 30px;
+  max-height: 20%;
 }
 
 nav strong {
-    font-size: x-large;
+  font-size: x-large;
 }
-
 nav ul {
-    display: inline-flex;
+  display: inline-flex;
 }
-
 nav li {
-    font-size: small;
-    list-style-type: none;
-    margin-left: 20px;
+  font-size: small;
+  list-style-type: none;
+  margin-left: 20px;
 }
-
 nav li a {
-    color: white;
-    text-decoration: none;
+  text-decoration: none;
+  color: white;
 }
-
 nav li a:hover {
-    color: white;
-    text-decoration: none;
-}
-
-.flex-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-flow: wrap row;
-}
-
-.form-container {
-    display: flex;
-    text-align: center;
-    justify-content: center;
-    flex-flow: wrap row;
+  text-decoration: none;
+  color: white;
 }
 
 .nav-container {
-    display: flex;
-    text-align: center;
-    justify-content: space-between;
-    flex-flow: nowrap row;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  flex-flow: nowrap row;
+}
+.nav-container .nav-item {
+  display: inline-flex;
+  align-content: center;
+  padding: 0;
 }
 
-.nav-item {
-    display: inline-flex;
-    align-content: center;
-    padding: 0;
+.flex-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-flow: wrap row;
+}
+.flex-container .flex-item {
+  align-content: center;
+  margin: 10px;
+  flex-basis: 30%;
+}
+.flex-container .flex-item .card-footer {
+  color: black;
 }
 
-.flex-item {
-    align-content: center;
-    flex-shrink: 2;
-    flex-grow: 5;
-    margin: 10px;
-    max-height: 30%;
-    max-width: 30%;
+.form-container {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  flex-flow: wrap row;
 }
-
-.form-item {
-    align-content: center;
-    flex-basis: 80%;
-    margin: 5px;
+.form-container .form-item {
+  align-content: center;
+  flex-basis: 80%;
+  margin: 5px;
 }
-
-.card-footer {
-    color: black;
+.form-container button {
+  background: #5961FF;
+  color: white;
 }
 
 footer {
-    background: rgba(0, 0, 0, 0.657);
-    text-align: center;
-    padding: 8px;
-    width: 100%;
-    position: fixed;
-    bottom: 0;
-    color: white;
+  background: rgba(0, 0, 0, 0.657);
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
 }
 
 @media screen and (max-width: 576px) {
-    .flex-item {
-        max-width: 80%;
-    }
+  .flex-item {
+    flex-basis: 100% !important;
+  }
 
-    .nav-container {
-        align-content: center;
-        flex-flow: wrap row;
-    }
+  nav ul {
+    display: block !important;
+  }
+  nav ul li {
+    justify-content: center;
+    text-align: center;
+    margin-right: 50px;
+    padding: 0;
+  }
 
-    .nav-item {
-        align-self: center!important;
-        width: 30%;
-    }
-
-    nav ul {
-        display: block!important;
-    }
+  .nav-container {
+    align-content: center;
+    text-align: center;
+    justify-content: center;
+    flex-flow: wrap row;
+  }
+  .nav-container .nav-item {
+    justify-content: center;
+    text-align: center;
+    flex-basis: 100%;
+    margin: 0;
+    padding: 0;
+  }
 }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,8 +1,16 @@
 $bgcolor: rgba(0,0,0,0.657);
+$white-text: white;
+$center: center;
+$flex: flex;
+$rowwrap: wrap row;
+$full: 100%;
+$none: 0;
 body {
-    margin: 0;
-    padding: 0;
+    margin: $none;
+    padding: $none;
     font-family: 'Josefin Sans', sans-serif;
+    background: $bgcolor;
+    color: $white-text;
 }
 
 .float-left {
@@ -18,14 +26,7 @@ header {
     max-height: 20%;
 }
 
-$white-text: white;
-$center: center;
-$flex: flex;
-$rowwrap: wrap row;
-$full: 100%;
-
 nav {
-    color: $white-text;
     strong {
         font-size: x-large;
     }
@@ -37,13 +38,12 @@ nav {
         list-style-type: none;
         margin-left: 20px;
         a {
-            color: $white-text;
             text-decoration: none;
-            
+            color: $white-text;
         }
         a:hover {
-            color: $white-text;
             text-decoration: none;
+            color: $white-text;
         }
     }
 }
@@ -55,7 +55,7 @@ nav {
     .nav-item {
         display: inline-flex;
         align-content: $center;
-        padding: 0;
+        padding: $none;
     }
 }
 
@@ -66,11 +66,8 @@ nav {
     flex-flow: $rowwrap;
     .flex-item {
         align-content: $center;
-        flex-shrink: 2;
-        flex-grow: 5;
         margin: 10px;
-        max-height: 30%;
-        max-width: 30%;
+        flex-basis: 30%;
         .card-footer {
             color: black;
         }
@@ -87,6 +84,10 @@ nav {
         flex-basis: 80%;
         margin: 5px;
     }
+    button {
+        background: #5961FF;
+        color: $white-text;
+    }
 }
 
 footer {
@@ -95,24 +96,34 @@ footer {
     padding: 8px;
     width: $full;
     position: fixed;
-    bottom: 0;
-    color: $white-text;
+    bottom: $none;
 }
 
 @media screen and (max-width: 576px) {
     .flex-item {
-        max-width: 80%;
+        flex-basis: $full!important;
     }
 
     nav ul {
         display: block!important;
+        li {
+            justify-content: $center;
+            text-align: $center;
+            margin-right: 50px;
+            padding: $none;
+        }
     }
     .nav-container {
         align-content: $center;
+        text-align: $center;
+        justify-content: $center;
         flex-flow: $rowwrap;
         .nav-item {
-            align-self: $center;
-            width: 30%;
+            justify-content: $center;
+            text-align: $center;
+            flex-basis: $full;
+            margin: $none;
+            padding: $none;
         }
     }
 }
